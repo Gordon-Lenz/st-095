@@ -66,13 +66,17 @@ G65 P9810 Z1.0  ( Protected move to Z1.0 )
 #690 = ATAN[ABS[#691] / ABS[#692]] ( ACTUAL_ANGLE - initial calculation )
 
 ( Adjust for quadrant )
-IF [#692 GT 0] AND [#691 GT 0] THEN #690 = #690  ( Quadrant I - no change ) 
+IF [#692 GT 0] AND [#691 GT 0] THEN
+    #690 = #690  ( Quadrant I - no change ) 
 ENDIF
-IF [#692 LT 0] AND [#691 GT 0] THEN #690 = 180 - #690  ( Quadrant II ) 
+IF [#692 LT 0] AND [#691 GT 0] THEN
+    #690 = 180 - #690  ( Quadrant II ) 
 ENDIF
-IF [#692 LT 0] AND [#691 LT 0] THEN #690 = #690 + 180  ( Quadrant III ) 
+IF [#692 LT 0] AND [#691 LT 0] THEN
+    #690 = #690 + 180  ( Quadrant III ) 
 ENDIF
-IF [#692 GT 0] AND [#691 LT 0] THEN #690 = 360 - #690  ( Quadrant IV ) 
+IF [#692 GT 0] AND [#691 LT 0] THEN
+    #690 = 360 - #690  ( Quadrant IV ) 
 ENDIF
 
 ( Calculate Adjustment Angle )
